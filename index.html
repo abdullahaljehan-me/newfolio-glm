@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abdullah Al Jehan — Embedded Systems · IoT · C · Linux</title>
+  <meta name="description" content="Abdullah Al Jehan — aspiring engineer from Dhaka, Bangladesh. Building at the intersection of code and the physical world: Embedded Systems, IoT, C programming and Linux. Founding Advisor @ Kynatium Labs.">
+  <meta name="author" content="Abdullah Al Jehan">
+  <link rel="canonical" href="https://abdullahaljehan.vercel.app/">
+  <meta name="theme-color" content="#0a0e14">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Abdullah Al Jehan — Embedded Systems & IoT">
+  <meta property="og:description" content="Bridging code with the physical world. Embedded Systems · IoT · C · Linux.">
+  <meta property="og:url" content="https://abdullahaljehan.vercel.app/">
+  <!-- TODO: add og:image 1200x630 -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0e14'/%3E%3Crect x='16' y='16' width='32' height='32' rx='6' fill='none' stroke='%2353e0ff' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%2353e0ff'/%3E%3Cpath d='M24 8v8M32 8v8M40 8v8M24 48v8M32 48v8M40 48v8M8 24h8M8 32h8M8 40h8M48 24h8M48 32h8M48 40h8' stroke='%2353e0ff' stroke-width='3'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <script>document.documentElement.classList.add('js');</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Abdullah Al Jehan",
+    "url": "https://abdullahaljehan.vercel.app/",
+    "email": "mailto:abdullahaljehan.me@gmail.com",
+    "jobTitle": "Student · Founding Advisor @ Kynatium Labs",
+    "address": { "@type": "PostalAddress", "addressLocality": "Dhaka", "addressCountry": "BD" },
+    "sameAs": [
+      "https://github.com/abdullahaljehan-me"
+      <!-- TODO: add LinkedIn URL -->
+    ],
+    "knowsAbout": ["Embedded Systems", "IoT", "C Programming", "Linux", "Arduino", "Robotics"]
+  }
+  </script>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+<!-- ══════════ NAVBAR ══════════ -->
+<header class="nav" id="navbar">
+  <div class="nav-inner container">
+    <a class="brand" href="#home" aria-label="Home">
+      <span class="brand-prompt">~/</span>jehan<span class="brand-caret">▊</span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+      <a href="#about"><span class="nl-num">01.</span><span class="nl-txt">about</span></a>
+      <a href="#journey"><span class="nl-num">02.</span><span class="nl-txt">journey</span></a>
+      <a href="#stack"><span class="nl-num">03.</span><span class="nl-txt">stack</span></a>
+      <a href="#projects"><span class="nl-num">04.</span><span class="nl-txt">projects</span></a>
+      <a href="#writing"><span class="nl-num">05.</span><span class="nl-txt">writing</span></a>
+      <a href="#activity"><span class="nl-num">06.</span><span class="nl-txt">activity</span></a>
+      <a href="#contact"><span class="nl-num">07.</span><span class="nl-txt">contact</span></a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme">
+        <svg class="ico-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+        <svg class="ico-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <!-- TODO: ensure assets/resume.pdf exists -->
+      <a class="btn btn-sm btn-ghost nav-resume" href="assets/resume.pdf" download>resume.pdf ↓</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ══════════ HERO ══════════ -->
+  <section class="hero" id="home">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container hero-grid">
+      <div class="hero-left">
+        <p class="hero-pill reveal"><span class="pulse-dot"></span> OPEN TO RESEARCH &amp; COLLABORATION</p>
+        <h1 class="reveal" data-d="1">Abdullah<br><span class="grad">Al Jehan</span></h1>
+        <p class="hero-typed reveal" data-d="2" aria-live="polite"><span class="tp-prompt">$</span> <span id="typed"></span><span class="typed-caret">▊</span></p>
+        <p class="hero-sub reveal" data-d="3">
+          Science student with a rock-solid foundation in mathematics &amp; physics —
+          engineering the bridge between <strong>code and the physical world</strong>.
+          Embedded systems, IoT, C, and Linux. <em>Build · break · iterate.</em>
+        </p>
+        <div class="hero-btns reveal" data-d="4">
+          <a class="btn btn-primary" href="#projects">View Projects →</a>
+          <a class="btn btn-ghost" href="assets/resume.pdf" download>Resume ↓</a>
+          <a class="btn btn-ghost" href="#contact">Get in Touch</a>
+        </div>
+        <div class="hero-stats reveal" data-d="5">
+          <div class="stat"><span class="stat-n" data-target="6" data-pad="2">00</span><span class="stat-l">projects shipped</span></div>
+          <div class="stat"><span class="stat-n" data-target="5.00" data-dec="2">0.00</span><span class="stat-l">GPA ×2 (SSC·HSC)</span></div>
+          <div class="stat"><span class="stat-n" data-target="2" data-pad="2">00</span><span class="stat-l">articles published</span></div>
+          <div class="stat"><span class="stat-n" data-target="1" data-pad="2">00</span><span class="stat-l">founding role</span></div>
+        </div>
+      </div>
+
+      <div class="hero-right reveal" data-d="3">
+        <div class="term-card" aria-label="Boot sequence demo">
+          <div class="term-card-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-card-title">jehan@embedded-sys: ~/intro</span><kbd>ctrl+`</kbd></div>
+          <pre class="term-card-body" id="bootPre" aria-hidden="true"></pre>
+        </div>
+        <p class="hero-hint">// press <kbd>ctrl + `</kbd> anytime to open my interactive shell</p>
+      </div>
+    </div>
+    <a class="scroll-cue" href="#about" aria-label="Scroll to about">▾</a>
+  </section>
+
+  <!-- ══════════ ABOUT ══════════ -->
+  <section class="sec" id="about">
+    <div class="container">
+      <header class="sec-head reveal">
+        <span class="sec-index">01</span>
+        <h2 class="sec-title">About<span class="sec-ext">.me</span></h2>
+        <span class="sec-line"></span>
+        <span class="sec-comment">// the human behind the terminal</span>
+      </header>
+
+      <div class="about-grid">
+        <div class="about-prose reveal">
+          <p class="lead">Hi, I'm <strong>Jehan</strong> — I believe the best engineering happens where <strong>code meets hardware</strong>.</p>
+          <p>I'm an ambitious science student preparing for an engineering career, with a deep dive into
+          <strong>embedded systems, IoT, and systems programming in C</strong>. My approach is analytical and
+          hands-on: a <em>"learn by doing"</em> philosophy — building, breaking, and iterating until the system is robust.</p>
+          <p>Currently, I'm proud to be a <strong>Founding Advisor at Kynatium Labs</strong>, where we're making
+          technology fundamentals and embedded education accessible to students across Bangladesh.</p>
+          <p>My long-term vision: cutting-edge research in <strong>smart systems &amp; robotics</strong>, graduate
+          studies abroad, and engineering roles at top-tier innovators. Always open to connecting with researchers,
+          engineers, and fellow builders. <strong>Let's build something impactful.</strong></p>
+
+          <div class="about-now">
+            <h3 class="mini-label">// currently learning</h3>
+            <div class="chip-row">
+              <span class="chip">C++ fundamentals</span><span class="chip">OOP</span>
+              <span class="chip">Linux administration</span><span class="chip">Embedded concepts</span>
+              <span class="chip">Hardware-software integration</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Operator card — inspired by the greats -->
+        <aside class="op-card reveal" data-d="1" aria-label="Quick profile">
+          <div class="op-head"><span class="op-title">operator.json</span><span class="op-sig">▚▚▚</span></div>
+          <dl class="op-dl">
+            <div><dt>name</dt><dd>Abdullah Al Jehan</dd></div>
+            <div><dt>alias</dt><dd>jehan</dd></div>
+            <div><dt>base</dt><dd>Dhaka, Bangladesh</dd></div>
+            <div><dt>coords</dt><dd>23.8103° N, 90.4125° E</dd></div>
+            <div><dt>role</dt><dd>Founding Advisor @ Kynatium Labs</dd></div>
+            <div><dt>school</dt><dd>Government Science College</dd></div>
+            <div><dt>focus</dt><dd>Embedded · IoT · C · Linux</dd></div>
+            <div><dt>languages</dt><dd>English · বাংলা</dd></div>
+            <div><dt>mindset</dt><dd>build → break → iterate</dd></div>
+            <div><dt>status</dt><dd><span class="ok">● online &amp; building</span></dd></div>
+          </dl>
+          <div class="op-quote">“Learn by doing. Ship, then sharpen.”</div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ JOURNEY ══════════ -->
+  <section class="sec" id="journey">
+    <div class="container">
+      <header class="sec-head reveal">
+        <span class="sec-index">02</span>
+        <h2 class="sec-title">Journey<span class="sec-ext">.overview</span></h2>
+        <span class="sec-line"></span>
+        <span class="sec-comment">// experience · education · milestones</span>
+      </header>
+
+      <ol class="timeline">
+        <li class="tl reveal">
+          <span class="tl-dot"></span>
+          <div class="tl-meta"><time>JAN 2026 — PRESENT</time><span class="tl-loc">Dhaka, Bangladesh</span></div>
+          <div class="tl-card">
+            <h3>Founding Advisor · <a href="https://www.linkedin.com/" target="_blank" rel="noopener">Kynatium Labs</a></h3><!-- TODO: Kynatium URL -->
+            <span class="tl-tag">Leadership</span>
+            <ul>
+              <li>Advising the founding team on strategic direction, technical roadmap &amp; early-stage decisions.</li>
+              <li>Reviewing embedded-systems content for clarity, accuracy &amp; feasibility.</li>
+              <li>Directing beginner-focused outreach to expand access to tech education in Bangladesh.</li>
+              <li>Supporting curriculum direction, community building &amp; long-term growth.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="tl reveal">
+          <span class="tl-dot"></span>
+          <div class="tl-meta"><time>OCT 2023 — JUN 2025</time><span class="tl-loc">Dhaka, Bangladesh</span></div>
+          <div class="tl-card">
+            <h3>Higher Secondary Certificate (HSC)</h3>
+            <span class="tl-tag">Education</span>
+            <p class="tl-sub">Government Science College · Science Stream</p>
+            <span class="gpa-badge">GPA 5.00 / 5.00</span>
+          </div>
+        </li>
+        <li class="tl reveal">
+          <span class="tl-dot"></span>
+          <div class="tl-meta"><time>JUN 2025</time><span class="tl-loc">Dhaka, Bangladesh</span></div>
+          <div class="tl-card">
+            <h3>Presidency University–Prothom Alo GPA-5 Reception</h3>
+            <span class="tl-tag">Recognition</span>
+            <p class="tl-sub">Honored for outstanding academic achievement — perfect GPA 5.00 in HSC.</p>
+          </div>
+        </li>
+        <li class="tl reveal">
+          <span class="tl-dot"></span>
+          <div class="tl-meta"><time>JAN 2021 — MAY 2023</time><span class="tl-loc">Dhaka, Bangladesh</span></div>
+          <div class="tl-card">
+            <h3>Secondary School Certificate (SSC)</h3>
+            <span class="tl-tag">Education</span>
+            <p class="tl-sub">President Prof. Dr. Iajuddin Ahmed Residential Model School &amp; College · Science</p>
+            <span class="gpa-badge">GPA 5.00 / 5.00</span>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ══════════ STACK ══════════ -->
+  <section class="sec" id="stack">
+    <div class="container">
+      <header class="sec-head reveal">
+        <span class="sec-index">03</span>
+        <h2 class="sec-title">The Stack<span class="sec-ext">.no-BS</span></h2>
+        <span class="sec-line"></span>
+        <span class="sec-comment">// grouped by purpose — never ranked by vanity percentages</span>
+      </header>
+
+      <p class="stack-legend reveal"><span class="lv core">CORE</span> I ship with it confidently &nbsp;·&nbsp; <span class="lv working">WORKING</span> comfortable, still sharpening &nbsp;·&nbsp; <span class="lv learning">LEARNING</span> actively leveling up</p>
+
+      <div class="stack-grid">
+        <div class="stack-group reveal">
+          <h3>[ languages ]</h3>
+          <ul class="skill-list">
+            <li>C <em>(fundamentals · file I/O)</em><span class="lv core">CORE</span></li>
+            <li>C++ <em>(OOP in progress)</em><span class="lv learning">LEARNING</span></li>
+            <li>Bash <em>(shell scripting)</em><span class="lv working">WORKING</span></li>
+            <li>HTML5 / CSS3 <em>(OKLCH systems)</em><span class="lv working">WORKING</span></li>
+            <li>JavaScript <em>(vanilla ES2022)</em><span class="lv working">WORKING</span></li>
+          </ul>
+        </div>
+        <div class="stack-group reveal" data-d="1">
+          <h3>[ systems &amp; tools ]</h3>
+          <ul class="skill-list">
+            <li>Linux <em>(Debian · Zorin · Kubuntu)</em><span class="lv working">WORKING</span></li>
+            <li>Git &amp; GitHub<span class="lv working">WORKING</span></li>
+            <li>VS Code<span class="lv core">CORE</span></li>
+            <li>CLI workflows <em>(flicker-free UIs)</em><span class="lv core">CORE</span></li>
+          </ul>
+        </div>
+        <div class="stack-group reveal" data-d="2">
+          <h3>[ embedded &amp; IoT ]</h3>
+          <ul class="skill-list">
+            <li>Arduino &amp; microcontrollers<span class="lv working">WORKING</span></li>
+            <li>HC-SR04 ultrasonic sensing<span class="lv working">WORKING</span></li>
+            <li>L298N motor driver logic<span class="lv working">WORKING</span></li>
+            <li>Sensor integration<span class="lv learning">LEARNING</span></li>
+            <li>HW-SW integration<span class="lv learning">LEARNING</span></li>
+          </ul>
+        </div>
+        <div class="stack-group reveal" data-d="3">
+          <h3>[ radar — next up ]</h3>
+          <ul class="skill-list radar">
+            <li>Robotics</li>
+            <li>AI &amp; Machine Learning</li>
+            <li>Automotive Engineering</li>
+            <li>RTOS concepts</li>
+            <li>Graduate research</li>
+          </ul>
+          <p class="radar-note">// things I'm steering toward — not claiming yet, just chasing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ PROJECTS ══════════ -->
+  <section class="sec" id="projects">
+    <div class="container">
+      <header class="sec-head reveal">
+        <span class="sec-index">04</span>
+        <h2 class="sec-title">Project<span class="sec-ext">.case-studies</span></h2>
+        <span class="sec-line"></span>
+        <span class="sec-comment">// software × hardware — expand any card for the full breakdown</span>
+      </header>
+
+      <!-- TODO: replace all Source links with exact repo URLs from github.com/abdullahaljehan-me -->
+
+      <article class="proj featured reveal">
+        <div class="proj-head">
+          <span class="proj-num">01</span>
+          <h3>Obstacle Avoiding Robot</h3>
+          <span class="proj-badge">★ HARDWARE</span>
+        </div>
+        <p class="proj-desc">Autonomous robot firmware using HC-SR04 ultrasonic sensors and L298N motor-driver
+        logic for real-time obstacle detection and navigation. My first full loop: <em>sense → decide → act</em> — in silicon.</p>
+        <div class="tag-row"><span>C++</span><span>Arduino</span><span>Ultrasonic</span><span>Motor Driver</span><span>Embedded</span></div>
+        <details class="case">
+          <summary>Technical Breakdown <span class="chev">▾</span></summary>
+          <div class="case-grid">
+            <div><h4>▍The problem</h4><p>Fixed-path robots die the moment the room changes. I wanted a machine that reacts to a world it can't predict.</p></div>
+            <div><h4>▍The build</h4><p>HC-SR04 pulse-timing for distance, threshold logic on the MCU, and L298N dual H-bridge control for differential steering — tuned in C++ on Arduino.</p></div>
+            <div><h4>▍The result</h4><p>A robot that navigates live obstacles autonomously — and a maker who finally understood interrupts, timing, and why datasheets matter.</p></div>
+          </div>
+        </details>
+        <div class="proj-links"><a class="btn btn-sm btn-ghost" href="https://github.com/abdullahaljehan-me?tab=repositories" target="_blank" rel="noopener">Source ↗</a></div>
+      </article>
+
+      <div class="proj-grid">
+        <article class="proj reveal">
+          <div class="proj-head"><span class="proj-num">02</span><h3>Contact Management System</h3></div>
+          <p class="proj-desc">CLI application in C managing contact records via binary file I/O — insertion, search, and persistent storage across sessions.</p>
+          <div class="tag-row"><span>C</span><span>Binary File I/O</span><span>CLI</span></div>
+          <div class="proj-links"><a class="lnk" href="https://github.com/abdullahaljehan-me?tab=repositories" target="_blank" rel="noopener">Source ↗</a></div>
+        </article>
+        <article class="proj reveal" data-d="1">
+          <div class="proj-head"><span class="proj-num">03</span><h3>Digital Clock CLI Suite</h3></div>
+          <p class="proj-desc">Flicker-free, real-time clock, drift-free stopwatch and alarm system in pure C using native OS APIs. Zero external dependencies.</p>
+          <div class="tag-row"><span>C</span><span>Real-time</span><span>OS APIs</span></div>
+          <div class="proj-links"><a class="lnk" href="https://github.com/abdullahaljehan-me?tab=repositories" target="_blank" rel="noopener">Source ↗</a></div>
+        </article>
+        <article class="proj reveal" data-d="2">
+          <div class="proj-head"><span class="proj-num">04</span><h3>Calendar Utility</h3></div>
+          <p class="proj-desc">Dependency-free C tool generating monthly &amp; yearly calendars, detecting leap years, and computing weekday for any Gregorian date.</p>
+          <div class="tag-row"><span>C</span><span>Algorithms</span><span>CLI</span></div>
+          <div class="proj-links"><a class="lnk" href="https://github.com/abdullahaljehan-me?tab=repositories" target="_blank" rel="noopener">Source ↗</a></div>
+        </article>
+        <article class="proj reveal" data-d="1">
+          <div class="proj-head"><span class="proj-num">05</span><h3>C Projects Roadmap</h3></div>
+          <p class="proj-desc">A living index of C projects covering algorithms, memory management, POSIX internals and systems-programming fundamentals.</p>
+          <div class="tag-row"><span>C</span><span>Systems</span><span>Documentation</span></div>
+          <div class="proj-links"><a class="lnk" href="https://github.com/abdullahaljehan-me?tab=repositories" target="_blank" rel="noopener">Source ↗</a></div>
+        </article>
+        <article class="proj reveal" data-d="2">
+          <div class="proj-head"><span class="proj-num">06</span><h3>This Website</h3></div>
+          <p class="proj-desc">v3.0 — handcrafted with vanilla HTML/CSS/JS. OKLCH theming, interactive shell, live GitHub feed, zero frameworks, zero build step.</p>
+          <div class="tag-row"><span>HTML5</span><span>CSS3</span><span>Vanilla JS</span><span>OKLCH</span></div>
+          <div class="proj-links"><a class="lnk" href="https://github.com/abdullahaljehan-me/portfolio" target="_blank" rel="noopener">Source ↗</a></div>
+        </article>
+        <a class="proj proj-more reveal" data-d="3" href="https://github.com/abdullahaljehan-me?tab=repositories" target="_blank" rel="noopener">
+          <span class="proj-num">+N</span>
+          <h3>Explore all repositories</h3>
+          <p class="proj-desc">The workbench is always running. See everything live on GitHub →</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ WRITING & RESEARCH ══════════ -->
+  <section class="sec" id="writing">
+    <div class="container">
+      <header class="sec-head reveal">
+        <span class="sec-index">05</span>
+        <h2 class="sec-title">Writing<span class="sec-ext">.research</span></h2>
+        <span class="sec-line"></span>
+        <span class="sec-comment">// notes from the lab &amp; the field</span>
+      </header>
+
+      <div class="writing-grid">
+        <a class="post reveal" href="https://www.linkedin.com/in/abdullahaljehan" target="_blank" rel="noopener"><!-- TODO: exact post URL -->
+          <div class="post-meta"><span class="post-src">LINKEDIN</span><time>JAN 15, 2025</time></div>
+          <h3>Leveling Up My Linux Journey: From Zorin OS to Kubuntu</h3>
+          <p>Exploring KDE Plasma, Wayland, Zsh and Ghostty to build a faster, developer-focused Linux workflow.</p>
+          <div class="tag-row"><span>Linux</span><span>Kubuntu</span><span>KDE</span></div>
+        </a>
+        <a class="post reveal" data-d="1" href="https://www.linkedin.com/in/abdullahaljehan" target="_blank" rel="noopener">
+          <div class="post-meta"><span class="post-src">LINKEDIN</span><time>NOV 20, 2024</time></div>
+          <h3>From Windows to Linux: My First Steps with Zorin OS 18</h3>
+          <p>First hands-on Linux journey — package management, system structure, and how the workflow differs from Windows.</p>
+          <div class="tag-row"><span>Linux</span><span>Zorin OS</span><span>Beginner</span></div>
+        </a>
+      </div>
+
+      <div class="research reveal" data-d="2">
+        <h3 class="mini-label">// research — in the lab, papers to come</h3>
+        <div class="research-row">
+          <div class="res-chip"><span class="res-status">DRAFTING</span><strong>Sensor fusion for low-cost educational robots</strong><em>making capable robotics affordable for Bangladeshi students</em></div>
+          <div class="res-chip"><span class="res-status">DRAFTING</span><strong>Embedded fundamentals, taught hands-first</strong><em>the Kynatium Labs curriculum experiment</em></div>
+          <div class="res-chip"><span class="res-status">EXPLORING</span><strong>Real-time patterns in bare-metal C</strong><em>timing, interrupts &amp; flicker-free systems</em></div>
+        </div>
+        <p class="research-note">// honest policy: nothing gets published here until it survives review — by me or someone stricter.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ INTERESTS ══════════ -->
+  <section class="sec" id="interests">
+    <div class="container">
+      <header class="sec-head reveal">
+        <span class="sec-index">—</span>
+        <h2 class="sec-title">Off<span class="sec-ext">.the-clock</span></h2>
+        <span class="sec-line"></span>
+        <span class="sec-comment">// what fuels the curiosity</span>
+      </header>
+
+      <div class="int-grid">
+        <div class="int reveal">
+          <h3>🤖 Robotics &amp; Automation</h3>
+          <p>Machines that sense, decide and move. Every robot I build teaches me something a textbook can't.</p>
+          <div class="creators"><span>watch:</span><a href="https://www.youtube.com/@MarkRober" target="_blank" rel="noopener">Mark Rober</a><a href="https://www.youtube.com/@BenEater" target="_blank" rel="noopener">Ben Eater</a></div>
+        </div>
+        <div class="int reveal" data-d="1">
+          <h3>⚡ Embedded &amp; Hardware</h3>
+          <p>Breadboards, datasheets, and the joy of making an LED obey. Hardware is where theory gets honest.</p>
+          <div class="creators"><span>watch:</span><a href="https://www.youtube.com/@greatscottlab" target="_blank" rel="noopener">GreatScott!</a><a href="https://www.youtube.com/@AndreasSpiess" target="_blank" rel="noopener">Andreas Spiess</a></div>
+        </div>
+        <div class="int reveal" data-d="2">
+          <h3>🐧 Linux &amp; Open Source</h3>
+          <p>From Zorin to Kubuntu — ricing my setup, reading man pages, and believing software should be free as in freedom.</p>
+          <div class="creators"><span>watch:</span><a href="https://www.youtube.com/@TheLinuxExperiment" target="_blank" rel="noopener">The Linux Experiment</a><a href="https://www.youtube.com/@Fireship" target="_blank" rel="noopener">Fireship</a></div>
+        </div>
+        <div class="int reveal" data-d="3">
+          <h3>🧠 AI &amp; Machine Learning</h3>
+          <p>The math behind the magic. Neural networks feel like physics that learned to dream.</p>
+          <div class="creators"><span>watch:</span><a href="https://www.youtube.com/@3blue1brown" target="_blank" rel="noopener">3Blue1Brown</a><a href="https://www.youtube.com/@TwoMinutePapers" target="_blank" rel="noopener">Two Minute Papers</a></div>
+        </div>
+        <div class="int reveal" data-d="4">
+          <h3>🚗 Automotive Engineering</h3>
+          <p>Cars are embedded systems you can drive — ECUs, sensors, control loops. My two obspections, one chassis.</p>
+          <div class="creators"><span>tag:</span><span class="static-chip">drive-by-wire</span><span class="static-chip">ECU tuning</span></div>
+        </div>
+        <div class="int reveal" data-d="5">
+          <h3>🔭 Physics &amp; How Things Work</h3>
+          <p>The universe is the ultimate system design problem. I like reading its source code.</p>
+          <div class="creators"><span>watch:</span><a href="https://www.youtube.com/@veritasium" target="_blank" rel="noopener">Veritasium</a><a href="https://www.youtube.com/@Vsauce" target="_blank" rel="noopener">Vsauce</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ ACTIVITY ══════════ -->
+  <section class="sec" id="activity">
+    <div class="container">
+      <header class="sec-head reveal">
+        <span class="sec-index">06</span>
+        <h2 class="sec-title">Live<span class="sec-ext">.activity</span></h2>
+        <span class="sec-line"></span>
+        <span class="sec-comment">// fresh from the GitHub API — no fake graphs, no vanity metrics</span>
+      </header>
+
+      <div class="gh-status reveal"><span class="pulse-dot"></span><span id="ghStatus">querying api.github.com …</span></div>
+      <div class="gh-grid" id="ghGrid" aria-live="polite"></div>
+      <div class="gh-foot reveal">
+        <a class="btn btn-ghost" href="https://github.com/abdullahaljehan-me" target="_blank" rel="noopener">@abdullahaljehan-me ↗</a>
+        <a class="btn btn-ghost" href="https://github.com/abdullahaljehan-me?tab=repositories" target="_blank" rel="noopener">All repositories ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ CREDENTIALS ══════════ -->
+  <section class="sec" id="credentials">
+    <div class="container">
+      <header class="sec-head reveal">
+        <span class="sec-index">07</span>
+        <h2 class="sec-title">Credentials<span class="sec-ext">.accolades</span></h2>
+        <span class="sec-line"></span>
+        <span class="sec-comment">// verified wins — and an honest empty state</span>
+      </header>
+
+      <div class="cred-grid">
+        <div class="cred-col reveal">
+          <h3 class="mini-label">// honors &amp; recognition</h3>
+          <div class="award">
+            <span class="award-ico">🏆</span>
+            <div>
+              <h4>Presidency University–Prothom Alo HSC GPA-5 Reception</h4>
+              <p>Recognized for outstanding academic achievement — perfect GPA 5.00 in the HSC examinations.</p>
+              <span class="award-year">2025 · Academic Excellence</span>
+            </div>
+          </div>
+          <div class="award">
+            <span class="award-ico">🎓</span>
+            <div>
+              <h4>Double Perfect GPA — SSC &amp; HSC</h4>
+              <p>Two consecutive national examinations, two flawless 5.00/5.00 results. Consistency is the flex.</p>
+              <span class="award-year">2023 &amp; 2025 · Academic</span>
+            </div>
+          </div>
+        </div>
+        <div class="cred-col reveal" data-d="1">
+          <h3 class="mini-label">// certifications &amp; accreditations</h3>
+          <div class="empty-state">
+            <span class="es-icon">[ ∅ ]</span>
+            <h4>Certification track — launching 2026</h4>
+            <p>Targeting: Embedded C · Linux administration (LPIC-1 path) · IoT fundamentals.
+            I'd rather show one verified certificate than five screenshots of completion bars.</p>
+            <span class="es-note">// this slot fills itself — watch the activity section</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ CONTACT ══════════ -->
+  <section class="sec" id="contact">
+    <div class="container">
+      <header class="sec-head reveal">
+        <span class="sec-index">08</span>
+        <h2 class="sec-title">Contact<span class="sec-ext">.init</span></h2>
+        <span class="sec-line"></span>
+        <span class="sec-comment">// research collabs · open source · technical opportunities</span>
+      </header>
+
+      <h3 class="cta-line reveal">Let's build <span class="grad">something.</span></h3>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="c-card reveal">
+            <span class="c-label">EMAIL // primary channel</span>
+            <div class="c-row">
+              <a class="c-val" href="mailto:abdullahaljehan.me@gmail.com">abdullahaljehan.me@gmail.com</a>
+              <button class="icon-btn" id="copyEmail" aria-label="Copy email">⧉</button>
+            </div>
+          </div>
+          <div class="c-card reveal" data-d="1">
+            <span class="c-label">BASE // operations</span>
+            <span class="c-val">Dhaka, Bangladesh <em>· BST (UTC+6)</em></span>
+          </div>
+          <div class="c-card reveal" data-d="2">
+            <span class="c-label">STATUS // availability</span>
+            <span class="c-val ok">● open to research &amp; collaboration</span>
+          </div>
+          <div class="c-card reveal" data-d="3">
+            <span class="c-label">CV // full record</span>
+            <a class="btn btn-primary btn-sm" href="assets/resume.pdf" download>Download Resume (PDF) ↓</a>
+          </div>
+          <div class="socials reveal" data-d="4">
+            <a class="btn btn-ghost btn-sm" href="https://github.com/abdullahaljehan-me" target="_blank" rel="noopener">GitHub ↗</a>
+            <a class="btn btn-ghost btn-sm" href="https://www.linkedin.com/in/abdullahaljehan" target="_blank" rel="noopener">LinkedIn ↗</a><!-- TODO: verify URL -->
+          </div>
+        </div>
+
+        <form class="contact-form reveal" data-d="2" id="contactForm">
+          <div class="f-row"><label for="fName">name</label><input id="fName" name="name" required autocomplete="name" placeholder="Ada Lovelace"></div>
+          <div class="f-row"><label for="fEmail">email</label><input id="fEmail" name="email" type="email" required autocomplete="email" placeholder="you@domain.com"></div>
+          <div class="f-row"><label for="fMsg">message</label><textarea id="fMsg" name="message" rows="5" required placeholder="Let's build something…"></textarea></div>
+          <input type="hidden" name="subject" value="New message from portfolio v3">
+          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" aria-hidden="true">
+          <button class="btn btn-primary" type="submit" id="formBtn">Transmit Message ⏎</button>
+          <p class="form-status" id="formStatus" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="footer">
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>C ✦ LINUX ✦ ARDUINO ✦ EMBEDDED C ✦ GIT ✦ BASH ✦ IOT ✦ HTML5 ✦ CSS3 ✦ JAVASCRIPT ✦ OKLCH ✦ ZERO DEPENDENCIES ✦ BUILD·BREAK·ITERATE ✦&nbsp;</span>
+      <span>C ✦ LINUX ✦ ARDUINO ✦ EMBEDDED C ✦ GIT ✦ BASH ✦ IOT ✦ HTML5 ✦ CSS3 ✦ JAVASCRIPT ✦ OKLCH ✦ ZERO DEPENDENCIES ✦ BUILD·BREAK·ITERATE ✦&nbsp;</span>
+    </div>
+  </div>
+  <div class="container footer-grid">
+    <div class="f-col">
+      <a class="brand" href="#home"><span class="brand-prompt">~/</span>jehan<span class="brand-caret">▊</span></a>
+      <p class="f-bio">Aspiring engineer bridging code with the physical world.<br>Founding Advisor @ Kynatium Labs.</p>
+      <p class="f-meta">v3.0 · vanilla · zero-dependency<br>© <span id="year">2026</span> Abdullah Al Jehan</p>
+    </div>
+    <nav class="f-col" aria-label="Footer navigation">
+      <h4>// navigate</h4>
+      <a href="#about">about</a><a href="#journey">journey</a><a href="#stack">stack</a>
+      <a href="#projects">projects</a><a href="#writing">writing</a><a href="#activity">activity</a>
+    </nav>
+    <div class="f-col">
+      <h4>// connect</h4>
+      <a href="https://github.com/abdullahaljehan-me" target="_blank" rel="noopener">github ↗</a>
+      <a href="https://www.linkedin.com/in/abdullahaljehan" target="_blank" rel="noopener">linkedin ↗</a>
+      <a href="mailto:abdullahaljehan.me@gmail.com">email ↗</a>
+      <a href="assets/resume.pdf" download>resume.pdf ↓</a>
+    </div>
+    <div class="f-col">
+      <h4>// meta</h4>
+      <p class="f-meta">no frameworks<br>no build step<br>no npm install<br>just view-source</p>
+      <a class="lnk" href="#home">back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════ TERMINAL DRAWER ══════════ -->
+<button class="term-fab" id="termFab" aria-label="Open interactive terminal (Ctrl+`)" title="Interactive terminal — Ctrl+`">>_</button>
+<div class="term" id="terminal" role="dialog" aria-modal="false" aria-label="Interactive terminal" hidden>
+  <div class="term-bar">
+    <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+    <span class="term-title">jehan@embedded-sys: ~ — type 'help'</span>
+    <button id="termClose" aria-label="Close terminal">✕</button>
+  </div>
+  <div class="term-body" id="termBody">
+    <div id="termOut"></div>
+    <form id="termForm" class="term-input-row">
+      <label class="term-prompt" for="termInput">jehan@sys:~$</label>
+      <input id="termInput" autocomplete="off" spellcheck="false" aria-label="Terminal command input">
+    </form>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
